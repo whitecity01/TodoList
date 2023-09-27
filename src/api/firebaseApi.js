@@ -14,6 +14,7 @@ const loadTodos = async () => {
     }
   } catch (error) {
     console.error("데이터 가져오기 에러:", error);
+    return [];
   }
 };
 
