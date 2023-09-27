@@ -3,7 +3,7 @@ import RootLayout from "./pages/RootLayout";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import TodoTemplate from "./pages/TodoTemplate";
-//import { loader as todosLoader } from "./pages/TodoTemplate";
+import { loader as todosLoader } from "./pages/TodoTemplate";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       {
         path: "todos",
         element: <TodoTemplate />,
-        //loader: todosLoader,
+        loader: todosLoader,
       },
     ]
   },
