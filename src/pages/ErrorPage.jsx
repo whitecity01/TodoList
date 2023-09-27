@@ -16,6 +16,7 @@ function ErrorPage() {
   return (
     <>
       <MainNavigation />
+      <h1>Oops</h1>
       <p>{message}</p>
     </>
   );
