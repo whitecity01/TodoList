@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const databaseURL = process.env.REACT_APP_FIREBASE_DATABASE_URL;
 
 const loadTodos = async () => {
@@ -14,7 +13,7 @@ const loadTodos = async () => {
       return [];
     }
   } catch (error) {
-    console.error("Firebase 데이터 가져오기 에러:", error);
+    console.error("데이터 가져오기 에러:", error);
   }
 };
 
@@ -28,7 +27,6 @@ const addData = async (todo) => {
 
 const editData = async (todo) => {
   try {
-    console.log(todo);
     await axios.patch(`${databaseURL}/todos/${todo.id}.json`, {
       done: !todo.done,
     });
@@ -40,7 +38,6 @@ const editData = async (todo) => {
 const removeData = async (todo) => {
   try {
     await axios.delete(`${databaseURL}/todos/${todo.id}.json`);
-    console.log("삭제 성공");
   } catch (error) {
     console.error("데이터 삭제 에러:", error);
   }
